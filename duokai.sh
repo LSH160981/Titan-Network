@@ -10,11 +10,11 @@ fi
 function install_node() {
 
 # 固定身份码  B9AF3196-E4E4-4A50-BDE3-8F0C3B882428
-id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
+id=B9AF3196-E4E4-4A50-BDE3-8F0C3B882428
 echo "当前使用的身份码为: $id"
 
 # 让用户输入想要创建的容器数量
-container_count="5"
+container_count=5
 echo "创建的容器数量: $container_count"
 
 # 让用户输入起始 RPC 端口号
@@ -24,7 +24,7 @@ echo "创建的容器 RPC 起始端口号: $start_rpc_port"
 read -p "请输入每个节点的存储空间大小（GB，1-2048）: " storage_gb
 
 # ---用户存储路径（可选）
-custom_storage_path=""
+custom_storage_path
 
 apt update
 
