@@ -2,14 +2,19 @@
 
 function install_node() {
 
+    # 身份码
     id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
+    # 容器数量
     container_count=5
+    # 默认的开启端口
     start_rpc_port=30000
+    # 默认存储路径
     custom_storage_path=""
+    # 每一个容器的大小
     storage_gb=10
-    
+
+    # 去除输入中的回车符   这两行代码 特殊使用
     # read -p "请输入你想要分配每个节点的存储空间大小（GB），单个上限2T, 网页生效较慢，等待20分钟后，网页查询即可: " storage_gb
-    # 去除输入中的回车符
     # storage_gb=$(echo "$storage_gb" | tr -d '\r')
 
     apt update
@@ -57,11 +62,7 @@ function install_node() {
         echo "节点 titan$i 已绑定."
     done
 
-    sleep 3
-
-    echo "=========T1-FeSo4=====================所有节点均已设置并启动==================================="
-
-    sleep 1
+    echo "===XiaoLiao======================FeSo4=====所有节点均已设置并启动==================================="
 
 }
 
