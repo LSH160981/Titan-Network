@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function install_node() {
 
     id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
@@ -39,7 +41,7 @@ function install_node() {
 
         echo "节点 titan$i 已经启动 容器ID $container_id"
 
-        sleep 30
+        sleep 20
 
         docker exec $container_id bash -c "\
             sed -i 's/^[[:space:]]*#StorageGB = .*/StorageGB = $storage_gb/' /root/.titanedge/config.toml && \
