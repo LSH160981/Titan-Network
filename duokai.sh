@@ -18,7 +18,7 @@ container_count="5"
 echo "创建的容器数量: $container_count"
 
 # 让用户输入起始 RPC 端口号
-start_rpc_port="30000"
+start_rpc_port=30000
 echo "创建的容器 RPC 起始端口号: $start_rpc_port"
 
 read -p "请输入每个节点的存储空间大小（GB，1-2048）: " storage_gb
