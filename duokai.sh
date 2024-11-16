@@ -1,7 +1,7 @@
 function install_node() {
 
     # 固定身份码
-    id="123456"
+    id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
     echo "身份码已固定为: $id"
 
     # 固定创建容器数量
