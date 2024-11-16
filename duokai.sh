@@ -22,7 +22,16 @@ start_rpc_port="30000"
 echo "创建的容器 RPC 端口号: $start_rpc_port"
 
 # 让用户输入想要分配的空间大小
-read -p "请输入你想要分配每个节点的存储空间大小（GB），单个上限2T, 网页生效较慢，等待20分钟后，网页查询即可: " storage_gb
+# "请输入你想要分配每个节点的存储空间大小（GB），单个上限2T, 网页生效较慢，等待20分钟后，网页查询即可: " storage_gb
+# 用户输入存储空间大小
+while true; do
+    read -p "请输入每个节点的存储空间大小（GB，1-2048）: " storage_gb
+    if [[ "$storage_gb" =~ ^[0-9]+$ ]] && [ "$storage_gb" -ge 1 ] && [ "$storage_gb" -le 2048 ]; then
+        break
+    else
+        echo "无效的输入，请输入1到2048之间的数字。"
+    fi
+done
 
 # ---用户存储路径（可选）
 custom_storage_path=""
