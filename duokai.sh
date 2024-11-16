@@ -9,20 +9,23 @@ fi
 
 function install_node() {
 
-# 读取加载身份码信息
-read -p "输入你的身份码: " id
+# 固定身份码  B9AF3196-E4E4-4A50-BDE3-8F0C3B882428
+id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
+echo "当前使用的身份码为: $id"
 
 # 让用户输入想要创建的容器数量
-read -p "请输入你想要创建的节点数量，单IP限制最多5个节点: " container_count
+container_count="5"
+echo "创建的容器数量: $container_count"
 
 # 让用户输入起始 RPC 端口号
-read -p "请输入你想要设置的起始 RPC端口 （端口号请自行设定，开启5个节点端口将会依次数字顺延，建议输入30000即可）: " start_rpc_port
+start_rpc_port="30000"
+echo "创建的容器 RPC 端口号: $start_rpc_port"
 
 # 让用户输入想要分配的空间大小
 read -p "请输入你想要分配每个节点的存储空间大小（GB），单个上限2T, 网页生效较慢，等待20分钟后，网页查询即可: " storage_gb
 
-# 让用户输入存储路径（可选）
-read -p "请输入节点存储数据的宿主机路径（直接回车将使用默认路径 titan_storage_$i,依次数字顺延）: " custom_storage_path
+# ---用户存储路径（可选）
+custom_storage_path=""
 
 apt update
 
@@ -84,56 +87,4 @@ done
 echo "==============================所有节点均已设置并启动==================================="
 
 }
-
-# 卸载节点功能
-function uninstall_node() {
-    echo "你确定要卸载Titan 节点程序吗？这将会删除所有相关的数据。[Y/N]"
-    read -r -p "请确认: " response
-
-    case "$response" in
-        [yY][eE][sS]|[yY]) 
-            echo "开始卸载节点程序..."
-            for i in {1..5}; do
-                sudo docker stop "titan$i" && sudo docker rm "titan$i"
-            done
-            for i in {1..5}; do 
-                rmName="storage_titan_$i"
-                rm -rf "$rmName"
-            done
-            echo "节点程序卸载完成。"
-            ;;
-        *)
-            echo "取消卸载操作。"
-            ;;
-    esac
-}
-
-
-# 主菜单
-function main_menu() {
-    while true; do
-        clear
-        echo "脚本以及教程由推特用户大赌哥 @y95277777 编写，免费开源，请勿相信收费"
-        echo "================================================================"
-        echo "节点社区 Telegram 群组:https://t.me/niuwuriji"
-        echo "节点社区 Telegram 频道:https://t.me/niuwuriji"
-        echo "节点社区 Discord 社群:https://discord.gg/GbMV5EcNWF"
-        echo "退出脚本，请按键盘ctrl c退出即可"
-        echo "请选择要执行的操作:"
-        echo "1. 安装节点"
-        echo "2. 卸载节点"
-        read -p "请输入选项（1-2）: " OPTION
-
-        case $OPTION in
-        1) install_node ;;
-        2) uninstall_node ;;
-        *) echo "无效选项。" ;;
-        esac
-        echo "按任意键返回主菜单..."
-        read -n 1
-    done
-    
-}
-
-# 显示主菜单
-main_menu
+install_node
