@@ -6,7 +6,7 @@ function install_node() {
     container_count=5
     start_rpc_port=30000
     custom_storage_path=""
-    storage_gb=5
+    storage_gb=10
     
     # read -p "请输入你想要分配每个节点的存储空间大小（GB），单个上限2T, 网页生效较慢，等待20分钟后，网页查询即可: " storage_gb
     # 去除输入中的回车符
