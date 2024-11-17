@@ -69,7 +69,7 @@ docker exec $container_id bash -c "\
         titan-edge bind --hash=$id https://api-test1.container1.titannet.io/api/v2/device/binding"
 done
 
-echo "==============================所有节点均已设置并启动===================================."
+echo "============XL=================所有节点均已设置并启动===================================."
 
 }
 
