@@ -73,9 +73,11 @@ function install_node() {
     done
 
     echo "===XiaoLiao===========FeSo4================所有节点均已设置并启动==================================="
-    
-    ip_address
+
 }
 
 install_node
+
+ip_address
+
 
