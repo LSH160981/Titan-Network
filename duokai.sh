@@ -1,15 +1,5 @@
 #!/bin/bash
 
-# 定义函数以获取当前 IPv4 地址
-ip_address() {
-    ipv4_address=$(curl -s --max-time 5 ipv4.ip.sb)
-    if [[ -n "$ipv4_address" ]]; then
-        echo -e "Current IPv4 address: ${ipv4_address}"
-    else
-        echo -e "Unable to fetch IPv4 address. Please check your network connection."
-    fi
-}
-
 # 安装节点
 install_node() {
 
@@ -79,6 +69,7 @@ install_node() {
 
 install_node
 
-ip_address
+
+
 
 
