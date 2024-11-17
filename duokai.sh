@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# 定义函数以获取当前 IPv4 地址
+ip_address() {
+    ipv4_address=$(curl -s --max-time 5 ipv4.ip.sb)
+    if [[ -n "$ipv4_address" ]]; then
+        echo -e "${INFO} Current IPv4 address: ${Green_font_prefix}${ipv4_address}${Font_color_suffix}"
+    else
+        echo -e "${ERROR} Unable to fetch IPv4 address. Please check your network connection."
+    fi
+}
+
 function install_node() {
 
     # 身份码
@@ -63,7 +73,8 @@ function install_node() {
     done
 
     echo "===XiaoLiao===========FeSo4================所有节点均已设置并启动==================================="
-
+    
+    ip_address
 }
 
 install_node
