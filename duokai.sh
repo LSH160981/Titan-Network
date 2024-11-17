@@ -16,7 +16,8 @@ ip_address() {
     fi
 }
 
-function install_node() {
+# 安装节点
+install_node() {
 
     # 身份码
     id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
