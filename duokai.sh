@@ -1,18 +1,12 @@
 #!/bin/bash
 
-set -e
-Green_font_prefix="\033[32m"
-Red_font_prefix="\033[31m"
-INFO="[${Green_font_prefix}INFO${Font_color_suffix}]"
-ERROR="[${Red_font_prefix}ERROR${Font_color_suffix}]"
-
 # 定义函数以获取当前 IPv4 地址
 ip_address() {
     ipv4_address=$(curl -s --max-time 5 ipv4.ip.sb)
     if [[ -n "$ipv4_address" ]]; then
-        echo -e "${INFO} Current IPv4 address: ${Green_font_prefix}${ipv4_address}${Font_color_suffix}"
+        echo -e "Current IPv4 address: ${ipv4_address}"
     else
-        echo -e "${ERROR} Unable to fetch IPv4 address. Please check your network connection."
+        echo -e "Unable to fetch IPv4 address. Please check your network connection."
     fi
 }
 
