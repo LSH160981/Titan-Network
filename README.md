@@ -6,5 +6,5 @@ wget -O duokai.sh https://raw.githubusercontent.com/LSH160981/Titan-Network/main
 
 # X
 ```
-wget -O xTian.sh https://raw.githubusercontent.com/LSH160981/Titan-Network/main/xTian.sh && chmod +x xTian.sh && ./xTian.sh
+wget -O xtian.sh https://raw.githubusercontent.com/LSH160981/Titan-Network/main/xtian.sh && chmod +x xtian.sh && ./xtian.sh
 ```
