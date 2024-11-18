@@ -12,7 +12,7 @@ install_node() {
     # 默认存储路径
     custom_storage_path=""
     # 每一个容器的大小
-    storage_gb=25
+    storage_gb=19
 
     # 去除输入中的回车符   这两行代码 特殊使用
     # read -p "请输入你想要分配每个节点的存储空间大小（GB），单个上限2T, 网页生效较慢，等待20分钟后，网页查询即可: " storage_gb
