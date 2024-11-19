@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# 检查是否以root用户运行脚本
-if [ "$(id -u)" != "0" ]; then
-    echo "此脚本需要以root用户权限运行。"
-    echo "请尝试使用 'sudo -i' 命令切换到root用户，然后再次运行此脚本。"
-    exit 1
-fi
-
 # 安装节点
 install_node() {
 
@@ -20,10 +13,6 @@ install_node() {
     custom_storage_path=""
     # 每一个容器的大小
     storage_gb=21
-
-    # 去除输入中的回车符   这两行代码 特殊使用
-    # read -p "请输入你想要分配每个节点的存储空间大小（GB），单个上限2T, 网页生效较慢，等待20分钟后，网页查询即可: " storage_gb
-    # storage_gb=$(echo "$storage_gb" | tr -d '\r')
 
     apt update
 
