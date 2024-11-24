@@ -12,7 +12,7 @@ install_node() {
     # 默认存储路径
     custom_storage_path=""
     # 每一个容器的大小
-    storage_gb=21
+    storage_gb=40
 
     apt update
 
