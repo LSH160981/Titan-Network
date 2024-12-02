@@ -49,5 +49,5 @@ source grass/bin/activate
 python -m pip install -r requirements.txt
 
 # 在后台运行脚本
-nohup python main.py &
+nohup python main.py > output.log 2>&1 &
 
