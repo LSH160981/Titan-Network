@@ -33,14 +33,14 @@ git clone https://github.com/LSH160981/grass-code
 cd grass-code
 
 # 创建虚拟环境
-python -m venv grass
+python3 -m venv grass
 
 # 激活虚拟环境
 source grass/bin/activate
 
 # 安装依赖
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 
 # 在后台运行脚本
-nohup python main.py > output.log 2>&1 &
+nohup python3 main.py > output.log 2>&1 &
 
