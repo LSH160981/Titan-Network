@@ -6,7 +6,7 @@ install_node() {
     # 身份码
     id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
     # 容器数量
-    container_count=1
+    container_count=5
     # 默认的开启端口
     start_rpc_port=30000
     # 默认存储路径
