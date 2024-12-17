@@ -3,19 +3,34 @@
 # 更新软件包索引
 sudo apt update -y
 
+# 默认参数
+id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
+container_count=5
+start_rpc_port=30000
+custom_storage_path=""
+storage_gb=21
+
+# 解析命令行参数
+while getopts "i:c:p:s:g:" opt; do
+    case $opt in
+        i) id="$OPTARG" ;;      # 身份码
+        c) container_count="$OPTARG" ;;  # 容器数量
+        p) start_rpc_port="$OPTARG" ;;    # 开启端口
+        s) custom_storage_path="$OPTARG" ;;  # 存储路径
+        g) storage_gb="$OPTARG" ;;  # 每个容器的大小
+        *) echo "无效的选项" ;;
+    esac
+done
+
+echo "使用以下配置启动节点："
+echo "身份码: $id"
+echo "容器数量: $container_count"
+echo "开始端口: $start_rpc_port"
+echo "存储路径: $custom_storage_path"
+echo "每个容器的大小: $storage_gb GB"
+
 # 安装节点
 install_node() {
-
-    # 身份码
-    id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
-    # 容器数量
-    container_count=5
-    # 默认的开启端口
-    start_rpc_port=30000
-    # 默认存储路径
-    custom_storage_path=""
-    # 每一个容器的大小
-    storage_gb=21
 
     if ! command -v docker &> /dev/null
     then
@@ -32,6 +47,10 @@ install_node() {
     do
         current_rpc_port=$((start_rpc_port + i - 1))
         storage_path="$PWD/titan_storage_$i"
+
+        if [ -n "$custom_storage_path" ]; then
+            storage_path="$custom_storage_path/titan_storage_$i"
+        fi
 
         # 检查是否存在同名容器
         existing_container=$(sudo docker ps -a -q -f name="titan$i")
@@ -64,5 +83,5 @@ install_node() {
 
 }
 
-
 install_node
+
