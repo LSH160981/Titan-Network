@@ -3,6 +3,14 @@
 
 该脚本用于安装并启动多个 Titan Network 节点容器。通过以下参数配置节点，若未指定某个参数，则使用默认值。
 
+## 使用示例
+
+### 使用默认参数
+如果不传递任何参数，脚本会使用默认配置：
+```bash
+wget -O duokai.sh https://raw.githubusercontent.com/LSH160981/Titan-Network/main/duokai.sh && chmod +x duokai.sh && ./duokai.sh
+```
+
 ## 参数说明
 
 ### `-i` 身份码
@@ -30,14 +38,6 @@ B9AF3196-E4E4-4A50-BDE3-8F0C3B882428
 指定每个容器的存储大小（单位为 GB）。默认值为：
 ```
 21
-```
-
-## 使用示例
-
-### 使用默认参数
-如果不传递任何参数，脚本会使用默认配置：
-```bash
-wget -O duokai.sh https://raw.githubusercontent.com/LSH160981/Titan-Network/main/duokai.sh && chmod +x duokai.sh && ./duokai.sh
 ```
 
 ### 使用自定义参数
