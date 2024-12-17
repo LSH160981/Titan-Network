@@ -15,7 +15,6 @@ install_node() {
     storage_gb=21
 
     apt update
-    apt install sudo -y
 
     if ! command -v docker &> /dev/null
     then
