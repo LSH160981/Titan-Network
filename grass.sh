@@ -2,6 +2,7 @@
 
 # 安装必要的依赖
 function install_dependencies() {
+  sudo apt update -y
 }
 
 # 安装 Python
