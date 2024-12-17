@@ -43,7 +43,7 @@ B9AF3196-E4E4-4A50-BDE3-8F0C3B882428
 ### 使用自定义参数
 如果需要自定义配置，可以使用命令行传递参数：
 ```bash
-wget -O duokai.sh https://raw.githubusercontent.com/LSH160981/Titan-Network/main/duokai.sh && chmod +x duokai.sh && ./duokai.sh -i "NewID" -c 10 -p 30010 -s "/path/to/storage" -g 30
+wget -O duokai.sh https://raw.githubusercontent.com/LSH160981/Titan-Network/main/duokai.sh && chmod +x duokai.sh && ./duokai.sh -i "Your_ID" -c 10 -p 30010 -s "/path/to/storage" -g 30
 ```
 以上命令会将身份码设置为 `"NewID"`，容器数量为 `10`，启动端口为 `30010`，存储路径为 `/path/to/storage`，每个容器的大小为 `30 GB`。
 
