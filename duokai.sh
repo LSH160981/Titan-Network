@@ -1,31 +1,7 @@
 #!/bin/bash
 
 # 更新软件包索引
-sudo apt-get update -y
-
-# 安装xray
-install_xray() {
-    
-    # 下载并执行 Xray 安装脚本
-    XRAY_INSTALL_SCRIPT="https://github.com/233boy/Xray/raw/main/install.sh"
-    if ! wget -qO- "$XRAY_INSTALL_SCRIPT" | bash; then
-        echo "Xray 安装脚本执行失败，请检查网络连接或安装脚本链接。"
-        exit 1
-    fi
-    
-    # 添加 Xray 配置
-    XRAY_UUID="1483c30c-ae2c-4130-f643-c6139d199c42"
-    XRAY_PORT="7000"
-    xray add tcp "$XRAY_PORT" "$XRAY_UUID"
-    
-    # 检查当前 IP
-    CURRENT_IP=$(curl -s ipv4.ip.sb)
-    if [ -n "$CURRENT_IP" ]; then
-        echo "当前服务器的 IPv4 地址是: $CURRENT_IP"
-    else
-        echo "无法获取 IPv4 地址，请检查网络连接。"
-    fi
-}
+sudo apt update -y
 
 # 安装节点
 install_node() {
@@ -86,6 +62,30 @@ install_node() {
 
     echo "===XL===FeSo4================所有节点均已设置并启动================================"
 
+}
+
+# 安装xray
+install_xray() {
+    
+    # 下载并执行 Xray 安装脚本
+    XRAY_INSTALL_SCRIPT="https://github.com/233boy/Xray/raw/main/install.sh"
+    if ! wget -qO- "$XRAY_INSTALL_SCRIPT" | bash; then
+        echo "Xray 安装脚本执行失败，请检查网络连接或安装脚本链接。"
+        exit 1
+    fi
+    
+    # 添加 Xray 配置
+    XRAY_UUID="1483c30c-ae2c-4130-f643-c6139d199c42"
+    XRAY_PORT="7000"
+    xray add tcp "$XRAY_PORT" "$XRAY_UUID"
+    
+    # 检查当前 IP
+    CURRENT_IP=$(curl -s ipv4.ip.sb)
+    if [ -n "$CURRENT_IP" ]; then
+        echo "当前服务器的 IPv4 地址是: $CURRENT_IP"
+    else
+        echo "无法获取 IPv4 地址，请检查网络连接。"
+    fi
 }
 
 install_node
