@@ -14,7 +14,8 @@ install_node() {
     # 每一个容器的大小
     storage_gb=21
 
-    sudo apt update
+    apt update
+    apt install sudo -y
 
     if ! command -v docker &> /dev/null
     then
