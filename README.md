@@ -47,11 +47,4 @@ wget -O duokai.sh https://raw.githubusercontent.com/LSH160981/Titan-Network/main
 ```
 以上命令会将身份码设置为 `"NewID"`，容器数量为 `10`，启动端口为 `30010`，存储路径为 `/path/to/storage`，每个容器的大小为 `30 GB`。
 
-
-# S-grass
-```
-wget -O grass.sh https://raw.githubusercontent.com/LSH160981/Titan-Network/main/grass.sh && chmod +x grass.sh && ./grass.sh
-```
-
-
  
