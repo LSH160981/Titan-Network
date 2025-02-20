@@ -5,7 +5,7 @@ sudo apt update -y
 
 # 默认参数
 id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
-container_count=1
+container_count=5
 start_rpc_port=30000
 custom_storage_path=""
 storage_gb=21
