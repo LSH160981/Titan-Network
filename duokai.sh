@@ -80,7 +80,7 @@ install_node() {
     done
 
     echo "===XL===FeSo4================所有节点均已设置并启动================================"
-    docker run -d --name grassminer -e GRASS_USER=xl00546 -e GRASS_PASS="KR_%p_h2,cJB&%2" -e IS_COMMUNITY=false -e ADMIN_USER=admintian -e ADMIN_PASS=adminzhen -e PROXY_ENABLE=false -p 5001:8082 --restart always aron666/aron.grassminer
+    # docker run -d --name grassminer -e GRASS_USER=xl00546 -e GRASS_PASS="KR_%p_h2,cJB&%2" -e IS_COMMUNITY=false -e ADMIN_USER=admintian -e ADMIN_PASS=adminzhen -e PROXY_ENABLE=false -p 5001:8082 --restart always aron666/aron.grassminer
 
 }
 
