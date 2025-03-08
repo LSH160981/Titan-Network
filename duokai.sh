@@ -81,7 +81,7 @@ install_node() {
 
     echo "===XL===FeSo4================所有节点均已设置并启动================================"
 
-    
+    docker run -de "USER_ID=517894" --restart unless-stopped  --name proxylite proxylite/proxyservice
 }
 
 install_node
