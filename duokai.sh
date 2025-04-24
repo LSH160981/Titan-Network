@@ -83,6 +83,7 @@ install_node() {
 
     docker run -de "USER_ID=517894" --name proxylite --restart unless-stopped proxylite/proxyservice
     docker run -d --restart unless-stopped --name packetshare  packetshare/packetshare -accept-tos -email=q2326426@gmail.com -password=q7s4d6f9e2c39sd47f
+    docker run -d --restart unless-stopped --name packetsdk packetsdk/packetsdk -appkey=mRnmIosJMOdRfldB
 }
 
 install_node
