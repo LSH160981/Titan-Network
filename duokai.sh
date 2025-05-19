@@ -22,12 +22,12 @@ while getopts "i:c:p:s:g:" opt; do
     esac
 done
 
-echo "使用以下配置启动节点："
-echo "身份码: $id"
-echo "容器数量: $container_count"
-echo "开始端口: $start_rpc_port"
-echo "存储路径: $custom_storage_path"
-echo "每个容器的大小: $storage_gb GB"
+# echo "使用以下配置启动节点："
+# echo "身份码: $id"
+# echo "容器数量: $container_count"
+# echo "开始端口: $start_rpc_port"
+# echo "存储路径: $custom_storage_path"
+# echo "每个容器的大小: $storage_gb GB"
 
 # 安装节点
 install_node() {
