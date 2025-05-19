@@ -86,10 +86,7 @@ install_node() {
     docker run -d --restart unless-stopped --name packetsdk packetsdk/packetsdk -appkey=mRnmIosJMOdRfldB
     docker run -d --restart=always --name repocket -e RP_EMAIL=q2326426@gmail.com -e RP_API_KEY=ff00f832-de20-4fc7-9700-ff85e3fc109e repocket/repocket
     
-    sudo  docker run -d  --restart = always -e  CID = 6zsh \ 
-    --name psclient packetstream/psclient:latest &&  sudo  docker run -d  --restart = always \ 
-    --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower \ 
-    --cleanup --include-stopped --include-restarting --revive-stopped --interval  60 psclient
+    docker run -d  --restart = always -e  CID = 6zsh --name psclient packetstream/psclient:latest 
     
     # 每天0点重启所有的docker容器
     wget -qO- https://raw.githubusercontent.com/LSH160981/airdrop/main/daily-docker-restart.sh | sudo bash
