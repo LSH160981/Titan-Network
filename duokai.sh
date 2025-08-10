@@ -1,8 +1,7 @@
 #!/bin/bash
 
-apt update && apt install sudo -y
 # 更新软件包索引
-sudo apt update -y
+apt update -y && apt install sudo -y
 
 # 默认参数
 id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
