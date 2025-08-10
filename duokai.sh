@@ -1,5 +1,6 @@
 #!/bin/bash
 
+apt update && apt install sudo -y
 # 更新软件包索引
 sudo apt update -y
 
