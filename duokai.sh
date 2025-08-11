@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 更新软件包索引
-apt update -y && apt install sudo -y
+apt update -y && apt install sudo curl wget -y
 
 # 默认参数
 id="B9AF3196-E4E4-4A50-BDE3-8F0C3B882428"
@@ -35,7 +35,7 @@ install_node() {
     if ! command -v docker &> /dev/null
     then
         echo "未检测到 Docker，正在安装..."
-        sudo apt-get install ca-certificates curl gnupg lsb-release -y
+        sudo apt-get install ca-certificates gnupg lsb-release -y
         sudo apt-get install docker.io -y
     else
         echo "Docker 已安装。"
