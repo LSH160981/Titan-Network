@@ -81,7 +81,7 @@ install_node() {
 
     echo "===XL===FeSo4================所有节点均已设置并启动================================"
 
-    docker run -d --restart unless-stopped --name packetsdk packetsdk/packetsdk -appkey=mRnmIosJMOdRfldB
+    # docker run -d --restart unless-stopped --name packetsdk packetsdk/packetsdk -appkey=mRnmIosJMOdRfldB
     docker run -d --restart=always --name repocket -e RP_EMAIL=q2326426@gmail.com -e RP_API_KEY=ff00f832-de20-4fc7-9700-ff85e3fc109e repocket/repocket
 
     
