@@ -84,6 +84,8 @@ install_node() {
     # docker run -d --restart unless-stopped --name packetsdk packetsdk/packetsdk -appkey=mRnmIosJMOdRfldB
     docker run -d --restart=always --name repocket -e RP_EMAIL=q2326426@gmail.com -e RP_API_KEY=ff00f832-de20-4fc7-9700-ff85e3fc109e repocket/repocket
     docker run -d --name antgain --restart always -e ANTGAIN_API_KEY=kuHdtLnOrCz69RtbAmhhgxzPNyK68fx4qNpVEvv6S5oFwYv1BKCx3GYsXMQrTbvD pinors/antgain-cli:latest
+    docker run -d --name=wizardgain --restart=always  -e EMAIL=q2326426@gmail.com  wizardgain/worker:latest
+
 
     
     
