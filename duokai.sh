@@ -86,7 +86,15 @@ install_node() {
     docker run -d --name=wizardgain --restart=always  -e EMAIL=q2326426@gmail.com  wizardgain/worker:latest
     
     # docker run -d --restart unless-stopped --name packetsdk packetsdk/packetsdk -appkey=mRnmIosJMOdRfldB
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/LSH160981/airdrop/refs/heads/main/packetsdk.sh)"
+    # bash -c "$(curl -fsSL https://raw.githubusercontent.com/LSH160981/airdrop/refs/heads/main/packetsdk.sh)"
+    docker run -d \
+      --name=packetsdk \
+      --cpus=0.25 --pull=always --restart=always \
+      --log-driver=json-file --log-opt max-size=1m --log-opt max-file=1 \
+      --cap-add=NET_ADMIN --cap-add=NET_RAW --sysctl net.ipv4.ip_forward=1 \
+      -e APPKEY=mRnmIosJMOdRfldB \
+      techroy23/docker-packetsdk:latest
+
 
 
     
